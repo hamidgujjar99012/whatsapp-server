@@ -115,7 +115,7 @@ cron.schedule('0 10 * * *', async () => {
     } catch (err) { console.error(err); }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = 8080;
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`🚀 Server 24/7 Mode par chal raha hai. Port: ${PORT}`);
 });
