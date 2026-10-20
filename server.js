@@ -36,7 +36,9 @@ async function loginBot() {
 loginBot();
 
 // --- WHATSAPP SETUP ---
-app.use(cors({ origin: '*' })); 
+const app = express();
+app.use(cors({ origin: '*' }));  // <-- YEH LINE YAHAN ADD KAREIN
+app.use(express.json({ limit: '50mb' }));
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
