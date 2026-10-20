@@ -37,9 +37,7 @@ loginBot();
 
 // --- WHATSAPP SETUP ---
 const app = express();
-app.use(cors({ origin: '*' }));  // <-- YEH LINE YAHAN ADD KAREIN
-app.use(express.json({ limit: '50mb' }));
-app.use(cors());
+app.use(cors({ origin: '*' })); // Yeh line ab bilkul sahi jagah hai
 app.use(express.json({ limit: '50mb' }));
 
 const sessions = new Map();
@@ -117,7 +115,7 @@ cron.schedule('0 10 * * *', async () => {
     } catch (err) { console.error(err); }
 });
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`🚀 Server 24/7 Mode par chal raha hai. Port: ${PORT}`);
 });
